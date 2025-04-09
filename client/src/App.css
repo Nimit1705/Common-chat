@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  background: radial-gradient(
+    circle at bottom center,
+    rgba(152, 17, 248, 0.192) 0%,
+    rgba(0, 0, 0, 0.9) 60%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background-color: #141414;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+#container{
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+
+.username-modal{
+  position: absolute;
+  border: 3px solid gray;
+  width: 30%;
+  padding: 10px 20px 20px 20px;
+  top: 8%;
+  right: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(42, 42, 42, 0.404);
+  border-radius: 20px;
+}
+
+
+.cross, .settings{
+  background-color: transparent;
+  border:none;
+}
+
+button{
+  cursor: pointer;
+}
+
+.controls{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.username-form{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  /* border: 1px solid red; */
+  flex: 2;
+}
+
+.username-form > label{
+  margin-left: 20px;
+}
+
+.name-box{
+  margin-left: 20px;
+  width: 90%;
+  height: 30px;
+  margin-bottom: 45px;
+  background: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  color:white;
+  padding-left: 8px;
+  font-size: 18px;
+
+}
+
+.name-box:focus{
+  outline: none;
+  border: 1px solid #b152ff
+}
+
+.send-name{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 30px;
+  padding: 2px 10px;
+  border-radius: 8px;
+  background-color: #b152ff;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#nav-container{
+  /* flex:1; */
+  height: 10vh;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chat-container{
+  /* border:1px solid red; */
+  height: 80vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 18px;
+}
+
+
+#input-container{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  background: transparent
+}
+
+
+
+.text-bubble{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.text-image{
+  aspect-ratio: 1/1;
+  width: auto;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.36);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: #b152ff00;
+}
+
+.text-message{
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.username{
+  margin-left: 3px;
+  font-size: 14px;
+  color: rgb(138, 138, 138);
+  font-weight: 600;
+  gap: 10px;
+}
+
+.username > span{
+  font-weight: 400;
+}
+
+.text{
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  width: max-content;
+  max-width: 600px;
+  font-weight: 400;
+}
+
+.user{
+  background: linear-gradient(225deg, rgb(150, 17, 248) 66%, rgb(194, 114, 255) 99%);
+  color: rgb(255, 255, 255);
+  /* border: 2px solid rgba(255, 0, 0, 0.556); */
+}
+
+.other{
+  background-color: rgb(48, 48, 48);
+  border: 2px solid rgba(128, 128, 128, 0.223);
+}
+
+.input-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  position: relative;
+}
+
+.input-box{
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  padding: 5px 10px;
+  padding-left: 15px;
+  padding-right: 40px;
+  border-radius: 30px;
+  border: 3px solid #808080;
+  background-color: #14141497;
+  color: white
+}
+
+.input-box:focus{
+  outline: none;
+  border: rgb(193, 106, 255) 3px solid;
+  filter: drop-shadow(1px 4px 8px rgba(193, 106, 255, 0.208))
+}
+
+.input-form:focus-within .send-button svg .stroke {
+  stroke: #b152ff; /* or whatever color you want */
+}
+
+.send-button{
+  background: none;
+  border:none;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  stroke: white
+}
+
+#chat-container::-webkit-scrollbar{
+  background: rgba(255, 18, 18, 0);
+  padding: 10px;
+  width: 10px;
+}
+
+#chat-container::-webkit-scrollbar-thumb{
+  background-color: #cecece67;
+  border-radius: 50px;
+}
+
