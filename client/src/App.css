@@ -33,6 +33,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: rgba(42, 42, 42, 0.404);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
 }
 
@@ -243,3 +244,14 @@ button{
   border-radius: 50px;
 }
 
+@media only screen and (max-width: 600px) {
+
+  .username-modal{
+    width: 86%;
+  }
+
+  .text{
+    max-width: 70vw;
+  }
+
+}
