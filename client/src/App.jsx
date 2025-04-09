@@ -19,12 +19,21 @@ const App = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if(!message.trim()){
+      setMessage("")
+      return
+    }
+
     socket.emit('message', {message, roomName});
     setMessage("")
   }
 
   const submitUsername = (e) => {
     e.preventDefault();
+    if(!username.trim()){
+      setUsername("")
+      return
+    }
     setIsModal(false)
     socket.emit('submit-username', username);
 
