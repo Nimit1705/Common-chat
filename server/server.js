@@ -5,6 +5,12 @@ import {Server} from 'socket.io';
 import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
 
 
+const timeFunc = () => {
+    const date = new Date(Date.now());
+    const time = `${date.getHours()}:${date.getMinutes()}`
+    return time
+}
+
 const app = express();
 const port = 3000;
 const server = new createServer(app);
@@ -33,12 +39,13 @@ io.on('connection', (socket) => {
     socket.on('message', (data) => {
         const message = data.message
         const id = socket.id
+        let sendTime = timeFunc()
         if(!socket.username || socket.username.trim() === ""){
             socket.username = uniqueNamesGenerator(randomNameConfig)
         }
         const username = socket.username
-        console.log(data.message);
-        io.to(data.roomName).emit('recieved-message', {message,username,id})
+        console.log({username, message: data.message});
+        io.to(data.roomName).emit('recieved-message', {message,username,id, sendTime})
     })
 
     socket.on('submit-username', (data) => {
