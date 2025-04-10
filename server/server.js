@@ -29,7 +29,7 @@ const randomNameConfig = {
 }
 
 app.get('/', (req, res) => {
-    res.send("<h1>Helloz</h1>")
+    res.send("hi")
 })
 
 io.on('connection', (socket) => {
