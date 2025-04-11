@@ -122,7 +122,7 @@ const App = () => {
         {isEmpty ? 
         <div className="empty">
           <h2>Chat is Empty...</h2>
-          <p>Be the first one to break the ice!</p>
+          <p>Be the one to break the ice!</p>
         </div> : ""}
           {messages.map((message, index) => (
             <div className="text-bubble" key={index}>
