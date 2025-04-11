@@ -11,6 +11,7 @@ const App = () => {
   const [username, setUsername] = useState("")
   const [sockid, setSockid] = useState("")
   const [isModal, setIsModal] = useState(false)
+  const [isEmpty, setIsEmpty] = useState(true)
   const modalRef = useRef(null);
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -85,6 +86,11 @@ const App = () => {
     return <div ref={elementRef} />;
   };
 
+  useEffect(() => {
+    if(messages.length != 0){
+      setIsEmpty(false);
+    }
+  }, [messages])
 
   return (
     <>
@@ -113,9 +119,13 @@ const App = () => {
 
       {/* Chat area */}
       <div id="chat-container" className= {`${isModal ? "blur" : ""}`}>
+        {isEmpty ? 
+        <div className="empty">
+          <h2>Chat is Empty...</h2>
+          <p>Be the first one to break the ice!</p>
+        </div> : ""}
           {messages.map((message, index) => (
             <div className="text-bubble" key={index}>
-              
               <div className="text-image">
                 {message.username.split(/\s/).reduce((response,word)=> response+=word.slice(0,1).toUpperCase(),'').substring(0,2)}
               </div>
