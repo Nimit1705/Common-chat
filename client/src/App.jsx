@@ -15,11 +15,14 @@ const App = () => {
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 
-  
-  
 
-  const date = new Date(Date.now());
-  const time = `${date.getHours()}:${date.getMinutes()}`
+  const timeFunc = () => {
+    const date = new Date(Date.now());
+    const hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const time = `${hours}:${minutes}`;
+    return time
+}
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -53,7 +56,7 @@ const App = () => {
       const username = msg.username
       const text = msg.message
       const id = msg.id
-      const time = msg.sendTime
+      const time = timeFunc();
       // console.log(msg)
       setMessages(prev => [...prev, { username, text, id, time }])
     })
