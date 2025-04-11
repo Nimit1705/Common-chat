@@ -141,6 +141,28 @@ button{
   z-index: 1;
 }
 
+.empty{
+  position: absolute;
+  font-size: max(1.5vw, 14px);
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.empty > h2{
+  font-weight: 600;
+  color:#d7d7d7;
+}
+
+.empty > p{
+    color:#9b9b9b;
+}
+
 /* #chat-container::after{
   content:'';
   width: 100%;
