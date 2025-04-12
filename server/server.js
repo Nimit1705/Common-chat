@@ -2,11 +2,13 @@ import express from 'express'
 import {createServer} from 'http';
 import {Server} from 'socket.io';
 import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
+import cors from 'cors';
 
 
 
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 const server = new createServer(app);
 const io = new Server(server, {
@@ -25,6 +27,10 @@ const randomNameConfig = {
 
 app.get('/', (req, res) => {
     res.send("hi")
+})
+
+app.get('/health', (req, res) => {  
+    res.status(200).send('server is alive');
 })
 
 

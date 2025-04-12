@@ -254,10 +254,14 @@ button{
   flex-direction: column;
 }
 
+
+
+
+
 .count{
   align-self: flex-end;
   margin-bottom: 2px;
-  margin-right: 10px;
+  margin-right: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,6 +355,85 @@ button{
   border-radius: 50px;
 }
 
+
+.loading-image{
+  background-color: #3f3f3f33;
+}
+
+.loading-text{
+  width: 200px;
+  height: 30px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-username-wrapper{
+  display: flex;
+}
+
+.loading-username-wrapper > span{
+  color:transparent;
+  background-color: rgba(48, 48, 48, 0.549);
+  width: max-content;
+}
+
+.loading-username{
+  background-color: rgba(48, 48, 48, 0.549);
+  color:transparent;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.loading-text {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.users-loading{
+  padding: 5px 10px;
+  border: 2px solid red;
+  border-radius: 8px;
+  background-color: rgba(255, 0, 0, 0.266);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  scale: 90%;
+}
+
+
+.users-loading > p{
+  font-weight: 600;
+  color: #9b9b9b;
+}
+
+.red{
+  background-color: red;
+  animation: ease-in-out pulse-animation-red 1s infinite;
+}
+
+@keyframes pulse-animation-red {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 108, 108, 0.599);
+  }
+  70% {
+    box-shadow: 0 0 0 4px rgba(255, 132, 132, 0.244);
+  }
+  100%{
+    box-shadow: 0 0 0 4px rgba(255, 114, 114, 0.06);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(63, 63, 63, 0.2); /* Initial color */
+  }
+  50% {
+    background-color: rgba(63, 63, 63, 0.4); /* Middle color */
+  }
+  100% {
+    background-color: rgba(63, 63, 63, 0.2); /* Back to initial */
+  }
+}
+
 @media only screen and (max-width: 600px) {
 
   .username-modal{
@@ -362,3 +445,4 @@ button{
   }
 
 }
+
