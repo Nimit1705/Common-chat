@@ -27,9 +27,15 @@ app.get('/', (req, res) => {
     res.send("hi")
 })
 
+
+const countUsers = () => {
+    io.to("chat").emit('user-count', io.engine.clientsCount)
+}
+
 io.on('connection', (socket) => {
     console.log(`user connected: ${socket.id}`)
     socket.join("chat")
+    countUsers();
 
     socket.on('message', (data) => {
         const message = data.message
@@ -53,6 +59,8 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         console.log(`user disconnected: ${socket.id}`);
+        countUsers();
+        
     })
 })
 
